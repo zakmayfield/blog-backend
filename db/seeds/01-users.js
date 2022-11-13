@@ -7,16 +7,16 @@ exports.seed = async function (knex) {
   await knex('users').del();
   await knex('users').insert([
     {
-      username: 'john',
-      email: 'john@email.com',
+      username: 'John',
+      email: 'john@john.com',
     },
     {
-      username: 'raj',
-      email: 'raj@email.com',
+      username: 'Sarah',
+      email: 'sarah@sarah.com',
     },
     {
-      username: 'sarah',
-      email: 'sarah@email.com',
-    },
+      username: 'Colter',
+      email: 'colter@colter.com',
+    }
   ]);
 };

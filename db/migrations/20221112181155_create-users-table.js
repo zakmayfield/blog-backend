@@ -8,6 +8,17 @@ exports.up = function (knex) {
 
     user.string('username').notNullable().unique();
     user.string('email').notNullable().unique();
+  }).createTable('posts', (post) => {
+    post.increments('id').primary();
+
+    post.string('title').notNullable();
+    post.string('body').notNullable();
+
+    post
+      .integer('user_id')
+      .references('id')
+      .inTable('users')
+      .onDelete('CASCADE')
   });
 };
 
@@ -15,6 +26,7 @@ exports.up = function (knex) {
  * @param { import("knex").Knex } knex
  * @returns { Promise<void> }
  */
-exports.down = function (knex) {
-  return knex.schema.dropTableIfExists('users');
+exports.down = async function (knex) {
+  await knex.schema.dropTableIfExists('posts');
+  await knex.schema.dropTableIfExists('users');
 };
