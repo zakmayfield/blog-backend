@@ -21,7 +21,7 @@ const getComments = async (req, res) => {
   res.status(200).json(comments);
 };
 
-// takes the post id in req.params
+// takes post id in req.params
 const createComment = async (req, res) => {
   const { postId } = req.params;
   const user_id = 2;
@@ -37,7 +37,7 @@ const createComment = async (req, res) => {
   res.status(200).json(body);
 };
 
-// takes comment ID in req.body
+// takes comment id in req.body
 const updateComment = async (req, res) => {
   const id = req.body.id;
   const body = req.body;
