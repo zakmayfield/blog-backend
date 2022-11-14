@@ -17,6 +17,10 @@ exports.seed = async function (knex) {
     {
       username: 'Colter',
       email: 'colter@colter.com',
-    }
+    },
+    {
+      username: 'Sam',
+      email: 'sam@sam.com',
+    },
   ]);
 };
