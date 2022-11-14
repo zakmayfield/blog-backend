@@ -3,7 +3,7 @@ const {
   getComments,
   createComment,
   updateComment,
-  deleteComment
+  deleteComment,
 } = require('../../controllers/commentController');
 
 route.get('/:postId', getComments);
